@@ -16,6 +16,7 @@ public class SystemController : MonoBehaviour
 
     internal PlayerProgress PlayerState = PlayerProgress.robot;
 
+    [SerializeField]
     internal int PlayerHP = 100;
 
     internal int PhasesComplete; 

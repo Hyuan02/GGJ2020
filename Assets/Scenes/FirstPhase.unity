@@ -375,7 +375,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 800c6b5efb98c1b43adee9011491bbd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  midiPath: Rhythm/MidiSongs/Song.mid
+  midiPath: MidiSongs/Song.mid
   hasStarted: 0
   minBlue: 50
   maxBlue: 54
@@ -947,6 +947,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &718970144
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 718970146}
+  - component: {fileID: 718970145}
+  m_Layer: 0
+  m_Name: SystemController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &718970145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 718970144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87eba4dbed3a91c4088e682b9e5aa43c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerHP: 100
+--- !u!4 &718970146
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 718970144}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 186.41896, y: 233.26076, z: -180.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &723331158
 GameObject:
   m_ObjectHideFlags: 0
@@ -1446,6 +1490,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1179773603}
   - component: {fileID: 1179773602}
+  - component: {fileID: 1179773604}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1470,6 +1515,7 @@ MonoBehaviour:
   ns: {fileID: 251438877}
   currentScore: 0
   scorePerNote: 100
+  notesMissed: 0
   scoreText: {fileID: 1791990394}
   multiplier: {fileID: 0}
 --- !u!4 &1179773603
@@ -1486,6 +1532,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1179773604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179773601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00537c38efa5d364d9ecb8ee0acefa87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  status:
+  - {fileID: 532241170808772009}
+  - {fileID: 532241170808772008}
+  - {fileID: 532241170808772007}
+  - {fileID: 532241170808772006}
 --- !u!1 &1294892953
 GameObject:
   m_ObjectHideFlags: 0
@@ -2850,6 +2913,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4a673cac9da62b48849929ccb9e3606, type: 3}
+--- !u!1 &532241170808772006 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1663096163359758348, guid: a4a673cac9da62b48849929ccb9e3606,
+    type: 3}
+  m_PrefabInstance: {fileID: 532241170808772003}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &532241170808772007 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5705345551877438473, guid: a4a673cac9da62b48849929ccb9e3606,
+    type: 3}
+  m_PrefabInstance: {fileID: 532241170808772003}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &532241170808772008 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1582521877027336522, guid: a4a673cac9da62b48849929ccb9e3606,
+    type: 3}
+  m_PrefabInstance: {fileID: 532241170808772003}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &532241170808772009 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4357922719949103785, guid: a4a673cac9da62b48849929ccb9e3606,
+    type: 3}
+  m_PrefabInstance: {fileID: 532241170808772003}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8152162365399608412
 PrefabInstance:
   m_ObjectHideFlags: 0
