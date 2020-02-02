@@ -22,8 +22,8 @@ public class NoteObject : MonoBehaviour
         {
             if (canBePressed)
             {
-                gameObject.SetActive(false);
                 GameManager._instance.NoteHit();
+                Destroy(gameObject);
             }
         }
     }
@@ -43,6 +43,7 @@ public class NoteObject : MonoBehaviour
             canBePressed = false;
 
             GameManager._instance.NoteMiss();
+            Destroy(gameObject);
         }
     }
 }

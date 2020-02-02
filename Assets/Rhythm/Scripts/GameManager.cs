@@ -12,7 +12,9 @@ public class GameManager : MonoBehaviour
 
     public bool startPlaying;
 
-    public BeatScroller bs;
+    //public BeatScroller bs;
+
+    public NotesSpawner ns;
 
     public int currentScore;
     
@@ -41,7 +43,7 @@ public class GameManager : MonoBehaviour
             if (Input.anyKeyDown)
             {
                 startPlaying = true;
-                bs.hasStarted = true;
+                ns.hasStarted = true;
                 theMusic.Play();
             }
         }

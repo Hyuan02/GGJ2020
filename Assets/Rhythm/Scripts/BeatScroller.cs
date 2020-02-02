@@ -8,7 +8,6 @@ public class BeatScroller : MonoBehaviour
 
     private float velocity;
 
-    public bool hasStarted;
 
     // Start is called before the first frame update
     void Start()
@@ -19,15 +18,6 @@ public class BeatScroller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!hasStarted)
-        {
-            //if (Input.anyKeyDown) {
-            //    hasStarted = true;
-            //}
-        }
-        else
-        {
             transform.position -= new Vector3(0, Time.deltaTime * velocity);
-        }
     }
 }
