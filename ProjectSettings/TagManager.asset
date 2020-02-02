@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Activator
   layers:
   - Default
   - TransparentFX
@@ -13,9 +14,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - Buttons
+  - Cenario
+  - Arrows
   - 
   - 
   - 
@@ -38,6 +39,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Cenario
+    uniqueID: 1365196209
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Robot
+    uniqueID: 72220495
+    locked: 0
+  - name: Buttons
+    uniqueID: 694990111
+    locked: 0
+  - name: Arrows
+    uniqueID: 797046665
     locked: 0
