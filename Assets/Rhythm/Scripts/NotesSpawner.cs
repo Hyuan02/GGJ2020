@@ -34,7 +34,9 @@ public class NotesSpawner : MonoBehaviour
 
     private void Awake()
     {
-        ParsingMidiTest.GetTimesAndNotes(midiPath, out times, out allNotes, out generalNotes);
+
+        Debug.Log(Application.dataPath);
+        ParsingMidiTest.GetTimesAndNotes(Application.streamingAssetsPath + "/" + midiPath, out times, out allNotes, out generalNotes);
 
        
 
