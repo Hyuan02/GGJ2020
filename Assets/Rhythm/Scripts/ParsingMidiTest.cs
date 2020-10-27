@@ -18,17 +18,18 @@ public class ParsingMidiTest
         public int NoteNumber { get; set; }
     }
 
-    public static IEnumerable<NoteInfo> GetNotesInfo(string filePath)
+    public static IEnumerable<NoteInfo> GetNotesInfo(string filePath, out TempoMap tempoMap)
     {
         var midiFile = MidiFile.Read(filePath);
         Debug.Log("Time div: " + midiFile.TimeDivision);
 
-        var tempoMap = midiFile.GetTempoMap();
+       tempoMap = midiFile.GetTempoMap();
 
         var programChanges = new Dictionary<FourBitNumber, Dictionary<long, SevenBitNumber>>();
         foreach (var timedEvent in midiFile.GetTimedEvents())
         {
             var programChangeEvent = timedEvent.Event as ProgramChangeEvent;
+            //Debug.Log("Seconds: " + timedEvent.TimeAs<MetricTimeSpan>(tempoMap).Seconds);
             if (programChangeEvent == null)
                 continue;
 
@@ -73,7 +74,8 @@ public class ParsingMidiTest
         generalNotes = new List<int>();
         allNotes = new List<int>();
         times = new List<long>();
-        foreach (NoteInfo n in GetNotesInfo(path))
+        TempoMap tempoMap;
+        foreach (NoteInfo n in GetNotesInfo(path, out tempoMap))
         {
             if (!generalNotes.Exists(x => x == n.NoteNumber))
             {
@@ -81,7 +83,7 @@ public class ParsingMidiTest
                     generalNotes.Add(n.NoteNumber);
             }
             
-            times.Add(n.Time);
+            times.Add(TimeConverter.ConvertTo<MetricTimeSpan>(n.Time, tempoMap).TotalMicroseconds);
             allNotes.Add(n.NoteNumber);
         }
     }
