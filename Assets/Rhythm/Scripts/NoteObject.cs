@@ -33,6 +33,7 @@ public class NoteObject : MonoBehaviour
         if(collision.tag == "Activator")
         {
             canBePressed = true;
+            GameManager._instance.IncrementNotes();
         }
     }
 

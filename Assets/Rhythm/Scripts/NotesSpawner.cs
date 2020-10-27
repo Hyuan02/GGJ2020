@@ -45,8 +45,11 @@ public class NotesSpawner : MonoBehaviour
     {
        for(int i=0; i<allNotes.Count; i++)
         {
-            StartCoroutine(WaitForSpawn(allNotes[i], times[i]/(960.0f)));
+            Debug.Log("Seconds: " + times[i] / 1000000f);
+            StartCoroutine(WaitForSpawn(allNotes[i], times[i] / 1000000f));
         }
+
+        StartCoroutine(GameManager._instance.NotesChecker(allNotes.Count));
     }
 
     private void Update()
@@ -68,24 +71,24 @@ public class NotesSpawner : MonoBehaviour
             GameObject g1 = Instantiate(notePrefabs[0], this.transform);
 
             BeatScroller bs = g1.AddComponent<BeatScroller>();
-            bs.beatTempo = 124;
+            bs.beatTempo = 125;
         }
         else if (type >= minRed && type <= maxRed)
         {
             GameObject g1 = Instantiate(notePrefabs[1], this.transform);
-            g1.AddComponent<BeatScroller>().beatTempo = 124;
+            g1.AddComponent<BeatScroller>().beatTempo = 125;
 
         }
         else if (type >= minYellow && type <= maxYellow)
         {
             GameObject g1 = Instantiate(notePrefabs[2], this.transform);
-            g1.AddComponent<BeatScroller>().beatTempo = 124;
+            g1.AddComponent<BeatScroller>().beatTempo = 125;
 
         }
         else if (type >= minGreen && type <= maxGreen)
         {
             GameObject g1 = Instantiate(notePrefabs[3], this.transform);
-            g1.AddComponent<BeatScroller>().beatTempo = 124;
+            g1.AddComponent<BeatScroller>().beatTempo = 125;
 
         }
 

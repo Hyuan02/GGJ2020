@@ -46,6 +46,11 @@ public class SystemController : MonoBehaviour
         LoadProgressScene(PhasesComplete);
     }
 
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
     void LoadProgressScene(int phaseNumber)
     {
         switch (phaseNumber)

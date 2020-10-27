@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -22,6 +23,10 @@ public class GameManager : MonoBehaviour
 
     public int notesMissed;
 
+    public int notesQuantity = 0;
+
+
+
 
 
 
@@ -33,6 +38,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         GameManager._instance = this;
+        notesQuantity = 0;
     }
     // Start is called before the first frame update
     void Start()
@@ -74,4 +80,20 @@ public class GameManager : MonoBehaviour
 
         }
     }
+
+    public void IncrementNotes()
+    {
+        notesQuantity++;
+    }
+
+    public IEnumerator NotesChecker(long lengthNotes)
+    {
+        Debug.Log("Length: " + lengthNotes);
+        yield return new WaitUntil(() => notesQuantity == lengthNotes);
+
+        yield return new WaitForSeconds(6.0f);
+
+        SceneManager.LoadScene("SampleScene");
+    }
+
 }

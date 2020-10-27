@@ -597,6 +597,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87eba4dbed3a91c4088e682b9e5aa43c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerHP: 100
 --- !u!4 &707816692
 Transform:
   m_ObjectHideFlags: 0
@@ -830,7 +831,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1464534063}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 707816691}
+        m_MethodName: QuitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1464534063
 MonoBehaviour:
   m_ObjectHideFlags: 0
